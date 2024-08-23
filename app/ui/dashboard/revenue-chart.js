@@ -9,10 +9,11 @@ import { fetchRevenue } from '@/app/lib/data';
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default async function RevenueChart() { // Jadikan komponen async, hapus props
-  const revenue = await fetchRevenue(); // Ambil data di dalam komponen
-
+export default async function RevenueChart() {
+  const revenue = await fetchRevenue();
   const chartHeight = 350;
+  // NOTE: Uncomment this code in Chapter 7
+
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
   if (!revenue || revenue.length === 0) {
@@ -25,7 +26,7 @@ export default async function RevenueChart() { // Jadikan komponen async, hapus 
         Recent Revenue
       </h2>
       {/* NOTE: Uncomment this code in Chapter 7 */}
-       <div className="p-4 rounded-xl bg-gray-50">
+      <div className="p-4 rounded-xl bg-gray-50">
         <div className="grid items-end grid-cols-12 gap-2 p-4 mt-0 bg-white rounded-md sm:grid-cols-13 md:gap-4">
           <div
             className="flex-col justify-between hidden mb-6 text-sm text-gray-400 sm:flex"
